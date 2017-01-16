@@ -1,5 +1,5 @@
 
-###This is simple End to End test based on scenario:
+###This is a simple End to End test based on scenario:
 
 
     1. Goto http://google.com/ncr
@@ -17,7 +17,7 @@
     mvn test
     
 
-###Requarements
+###Requirements
 Firefox <= 47
 
 
