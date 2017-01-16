@@ -2,7 +2,7 @@
 ###This is simple End to End test based on scenario:
 
 
-    1.Goto http://google.com/ncr
+    1. Goto http://google.com/ncr
     2. Search for “selenide”
     3. We expect to have a link to selenide.org as top-1 result.
     4. Switch to Images search
@@ -12,3 +12,13 @@
 
 
 ###How to Start
+    git clone https://github.com/romansyrotenko/searchGoogleSelenide.git
+    cd searchGoogleSelenide
+    mvn test
+    
+
+###Requarements
+Firefox <= 47
+
+
+    
