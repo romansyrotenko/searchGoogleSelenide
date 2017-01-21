@@ -1,34 +1,32 @@
+import org.junit.After;
 import org.junit.Test;
-import org.openqa.selenium.By;
+import pages.ResultsPage;
+import pages.SearchPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
-
+import static com.codeborne.selenide.Selenide.close;
 
 public class GoogleSearchTest {
 
-    @Test
-    public void testSearchAndFollowLink() {
+    SearchPage main = new SearchPage();
+    ResultsPage results = new ResultsPage();
 
-        open("http://google.com/ncr");
-        $(By.name("q")).val("selenide").pressEnter();
-        checkSearchResult(0, "selenide.org");
-
-        goTo("Images");
-        $$(By.cssSelector(".rg_ic")).get(0).hover();
-        $$(By.cssSelector(".rg_ilmn")).get(0).shouldHave(text("352 × 186 - selenide.org"));
-
-        goTo("All");
-        checkSearchResult(0, "selenide.org");
-
+    @After
+    public void closeDriver() {
         close();
     }
 
-    private void checkSearchResult(int index, String text) {
-        $$(By.cssSelector(".s  ._Rm")).get(index).shouldHave(text(text));
-    }
+    @Test
+    public void testSearchAndCheckLinkCheckPicture() {
 
-    private void goTo(String linkText) {
-        $(By.linkText(linkText)).click();
+        main.openPage();
+        main.search("selenide");
+        results.check(0, "selenide.org");
+
+        results.goTab("Images");
+        results.checkImage(0, "352 × 186 - selenide.org");
+
+        results.goTab("All");
+        results.check(0, "selenide.org");
+
     }
 }
