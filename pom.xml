@@ -18,19 +18,60 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>4.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
             <version>3.9.1</version>
         </dependency>
 
+
     </dependencies>
 
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
 
+    <profiles>
 
+    <profile>
+        <id>firefox</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <build>
+            <resources>
+                <resource>
+                    <directory>src/main/resources/firefox</directory>
+                </resource>
+            </resources>
+        </build>
+    </profile>
+
+        <profile>
+            <id>chrome</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/chrome</directory>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+
+        <profile>
+            <id>phantomjs</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/phantomjs</directory>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+
+    </profiles>
 
 
 

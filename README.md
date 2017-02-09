@@ -10,11 +10,23 @@
     6. Switch back to “All” link
     7. We expect that we still have the same link to selenide.org as in step 3
 
+###Before start
+You should prepare your current environment for using different browsers
+    1. Download current chromedriver from here https://sites.google.com/a/chromium.org/chromedriver/downloads
+    2. Download and unzip current phantomjs driver from here http://phantomjs.org/download.html 
+    3. Add info about place where they are to your PATH variable 
 
-###How to Start
+
+###How to run test with default browser
     git clone https://github.com/romansyrotenko/searchGoogleSelenide.git
     cd searchGoogleSelenide
     mvn test
+    
+###How to run test with other browsers
+    
+    mvn test -P firefox     - run test in Firefox
+    mvn test -P chrome      - run test in Chrome
+    mvn test -P phantomjs   - run test in phantomjs browser 
     
 
 ###Requirements
