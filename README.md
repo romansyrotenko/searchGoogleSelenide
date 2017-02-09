@@ -12,9 +12,10 @@
 
 ###Before start
 You should prepare your current environment for using different browsers
+
     1. Download current chromedriver from here https://sites.google.com/a/chromium.org/chromedriver/downloads
     2. Download and unzip current phantomjs driver from here http://phantomjs.org/download.html 
-    3. Add info about place where they are to your PATH variable 
+    3. Add info about current location where they are to your PATH variable 
 
 
 ###How to run test with default browser
