@@ -26,17 +26,17 @@ public class GoogleSearchTest {
     }
 
     @Test
-    public void testSearchAndCheckLinkCheckPicture() {
+    public void testSearchAndCheckLinkAndCheckPicture() {
 
         main.open();
         main.search("selenide");
-        results.check(0, "selenide.org");
+        results.checkResult(0, "selenide.org");
 
         results.goTab("Images");
         results.checkImage(0, "352 × 186 - selenide.org");
 
         results.goTab("All");
-        results.check(0, "selenide.org");
+        results.checkResult(0, "selenide.org");
 
     }
 }

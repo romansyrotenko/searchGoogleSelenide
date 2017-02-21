@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class ResultsPage {
 
-    public void check(int index, String text) {
+    public void checkResult(int index, String text) {
         $$(By.cssSelector(".s  ._Rm")).get(index).shouldHave(text(text));
     }
 
